@@ -2,8 +2,6 @@
 
 package main
 
-
-
 import (
 
 
@@ -16,7 +14,6 @@ type htmlPageData struct {
     pageList []pageNav
     
 }
-
 
 type pageNav struct {
     pageTitle string
@@ -101,6 +98,46 @@ func appHandler(w http.ResponseWriter, r *http.Request) {
   pageFilePath.Execute(w, pageData)
   
 }  //  .  appHandler
+
+
+
+// . indexHandler
+func indexHandler(w http.ResponseWriter, r *http.Request) {
+
+    if r.URL.Path != "/app" {
+    	http.NotFound(w, r)
+    	return
+    }
+    
+// ,
+
+  pageTitle := "~ Learn.CSS-Layout.online - // - Website App"
+  pagePath := r.URL.Path
+  
+  pageType := ".."
+
+pageData := htmlPageData {
+      pageTitle: pageTitle,
+      pagePath: pagePath,
+      
+      pageList: []pageNav {
+          { pageTitle: "one", pageLink: "one"},
+          { pageTitle: "two", pageLink: "two"},
+          { pageTitle: "three", pageLink: "three"},
+      },
+  	
+  }  //. .  pageData
+  
+  
+  if pagePath == "/user" {
+      pageTitle = "User Page"
+      pageList = pageList
+  }
+
+pageFilePath := template.Must(template.ParseFiles("layout_main_page.html"))
+  pageFilePath.Execute(w, pageData)
+  
+}  //  .  indexHandler
 
 
 
