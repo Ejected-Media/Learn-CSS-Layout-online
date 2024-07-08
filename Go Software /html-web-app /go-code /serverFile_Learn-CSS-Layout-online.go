@@ -101,15 +101,50 @@ func appHandler(w http.ResponseWriter, r *http.Request) {
 
 
 
+
+// . pageHandler
+func pageHandler(w http.ResponseWriter, r *http.Request) {
+// ,  ° . +
+
+  pageTitle := "~ Learn.CSS-Layout.online - // - Website App"
+  pagePath := r.URL.Path
+  
+  pageType := ".."
+
+pageData := htmlPageData {
+      pageTitle: pageTitle,
+      pagePath: pagePath,
+      
+      pageList: []pageNav {
+          { pageTitle: "one", pageLink: "one"},
+          { pageTitle: "two", pageLink: "two"},
+          { pageTitle: "three", pageLink: "three"},
+      },
+  	
+  }  //. .  pageData
+  
+  
+  if pagePath == "/user" {
+      pageTitle = "User Page"
+      pageList = pageList
+  }
+
+pageFilePath := template.Must(template.ParseFiles("layout_main_page.html"))
+  pageFilePath.Execute(w, pageData)
+  
+}  //  .  pageHandler
+
+
+
 // . indexHandler
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 
-    if r.URL.Path != "/app" {
+    if r.URL.Path != "/" {
     	http.NotFound(w, r)
     	return
     }
-    
-// ,
+
+// , ° . +
 
   pageTitle := "~ Learn.CSS-Layout.online - // - Website App"
   pagePath := r.URL.Path
