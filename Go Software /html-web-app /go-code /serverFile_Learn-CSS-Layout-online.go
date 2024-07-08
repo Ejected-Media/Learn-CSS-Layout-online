@@ -1,5 +1,5 @@
  # ~ Learn-CSS-Layout-online ~
-
+// ,  ° . +
 package main
 
 import (
@@ -7,7 +7,7 @@ import (
 
 )
 
-
+// ,  ° . +
 type htmlPageData struct {
     pageTitle string
     pagePath string
@@ -21,6 +21,7 @@ type pageNav struct {
 }
 
 
+// ,  ° . +
 func app_welcome_center_page() {
 
 
@@ -30,20 +31,19 @@ func app_welcome_center_page() {
 
 // . appHandler
 func appHandler(w http.ResponseWriter, r *http.Request) {
-
+// ,  ° . +
     if r.URL.Path != "/app" {
     	http.NotFound(w, r)
     	return
     }
     
 // ,
-
   pageTitle := "~ Learn.CSS-Layout.online - // - Website App"
   pagePath := r.URL.Path
   
   pageType := ".."
   
-  
+// ,  ° . +
   pageData := htmlPageData {
       pageTitle: pageTitle,
       pagePath: pagePath,
@@ -56,7 +56,7 @@ func appHandler(w http.ResponseWriter, r *http.Request) {
   	
   }  //. .  pageData
   
-  
+// ,  ° . +
   if pagePath == "/user" {
       pageTitle = "User Page"
       pageList = pageList
@@ -73,7 +73,7 @@ func appHandler(w http.ResponseWriter, r *http.Request) {
   }
   
   
-  
+// ,  ° . +
   if pagePath == "/portfolio" {
       pageTitle = "Portfolio Page"
       pageList = pageList
@@ -89,11 +89,8 @@ func appHandler(w http.ResponseWriter, r *http.Request) {
       pageList = pageList
   }
   
-
- 
   
-  
-  
+// ,  ° . +
   pageFilePath := template.Must(template.ParseFiles("layout_main_page.html"))
   pageFilePath.Execute(w, pageData)
   
@@ -108,9 +105,10 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 
   pageTitle := "~ Learn.CSS-Layout.online - // - Website App"
   pagePath := r.URL.Path
-  
   pageType := ".."
 
+
+// ,  ° . +
 pageData := htmlPageData {
       pageTitle: pageTitle,
       pagePath: pagePath,
@@ -129,6 +127,8 @@ pageData := htmlPageData {
       pageList = pageList
   }
 
+
+// ,  ° . +
 pageFilePath := template.Must(template.ParseFiles("layout_main_page.html"))
   pageFilePath.Execute(w, pageData)
   
@@ -138,19 +138,19 @@ pageFilePath := template.Must(template.ParseFiles("layout_main_page.html"))
 
 // . indexHandler
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-
+// ,  ° . +
     if r.URL.Path != "/" {
     	http.NotFound(w, r)
     	return
     }
 
 // , ° . +
-
   pageTitle := "~ Learn.CSS-Layout.online - // - Website App"
   pagePath := r.URL.Path
-  
   pageType := ".."
 
+
+// ,  ° . +
 pageData := htmlPageData {
       pageTitle: pageTitle,
       pagePath: pagePath,
@@ -169,7 +169,8 @@ pageData := htmlPageData {
       pageList = pageList
   }
 
-pageFilePath := template.Must(template.ParseFiles("layout_main_page.html"))
+// ,  ° . +
+  pageFilePath := template.Must(template.ParseFiles("layout_main_page.html"))
   pageFilePath.Execute(w, pageData)
   
 }  //  .  indexHandler
@@ -181,10 +182,10 @@ pageFilePath := template.Must(template.ParseFiles("layout_main_page.html"))
 //  .  as well as terminal cli logs
 
 func main() {
-
+// ,  ° . +
   appName := "~ Learn.CSS-Layout.online - // - Website App"
 
-
+// ,  ° . +
   http.HandleFunc("/", indexHandler)
   
   http.HandleFunc("/user", indexHandler)
@@ -207,7 +208,7 @@ func main() {
     log.Printf("Loading _webapp with default port")
   }
   
-  
+// ,  ° . +
   log.Printf("_webapp is active and Listening on port %s", port)
 
   log.Printf("// -- - %s", appName)
