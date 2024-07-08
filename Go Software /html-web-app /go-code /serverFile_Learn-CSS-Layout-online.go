@@ -56,10 +56,13 @@ func appHandler(w http.ResponseWriter, r *http.Request) {
   	
   }  //. .  pageData
   
-
+  if pagePath == "/settings" {
+      pageTitle = "Settings Page"
+      pageList = pageList
+  }
   
   
-// ,  ° . +
+// ,  ° . + 
   pageFilePath := template.Must(template.ParseFiles("layout_main_page.html"))
   pageFilePath.Execute(w, pageData)
   
@@ -124,11 +127,6 @@ pageData := htmlPageData {
       pageTitle = "Resume Page"
       pageList = pageList
   }
-  
-  if pagePath == "/settings" {
-      pageTitle = "Settings Page"
-      pageList = pageList
-  }
 
 
 // ,  ° . +
@@ -167,8 +165,28 @@ pageData := htmlPageData {
   }  //. .  pageData
   
   
-  if pagePath == "/user" {
-      pageTitle = "User Page"
+  if pagePath == "/" {
+      pageTitle = "Index Page"
+      pageList = pageList
+  }
+  
+    if pagePath == "/front" {
+      pageTitle = "Front Page"
+      pageList = pageList
+  }
+  
+    if pagePath == "/main" {
+      pageTitle = "Main Page"
+      pageList = pageList
+  }
+  
+    if pagePath == "/home" {
+      pageTitle = "Home Page"
+      pageList = pageList
+  }
+  
+    if pagePath == "/start" {
+      pageTitle = "Start Page"
       pageList = pageList
   }
 
@@ -190,7 +208,12 @@ func main() {
 
 // ,  ° . +
   http.HandleFunc("/", indexHandler)
+  http.HandleFunc("/front", indexHandler)
+  http.HandleFunc("/main", indexHandler)
+  http.HandleFunc("/home", indexHandler)
+  http.HandleFunc("/start", indexHandler)
   
+  // ,  ° . +
   http.HandleFunc("/user", pageHandler)
   http.HandleFunc("/account", pageHandler)
   http.HandleFunc("/profile", pageHandler)
@@ -198,6 +221,8 @@ func main() {
   http.HandleFunc("/portfolio", pageHandler)
   http.HandleFunc("/resume", pageHandler)
   
+  
+  // ,  ° . +
   http.HandleFunc("/settings", appHandler)
   
 
