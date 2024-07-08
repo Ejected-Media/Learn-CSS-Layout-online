@@ -29,7 +29,7 @@ func app_welcome_center_page() {
 
 
 
-// . appHandler
+// . appHandler, ~ for Data Pages °
 func appHandler(w http.ResponseWriter, r *http.Request) {
 // ,  ° . +
     if r.URL.Path != "/app" {
@@ -56,7 +56,48 @@ func appHandler(w http.ResponseWriter, r *http.Request) {
   	
   }  //. .  pageData
   
+
+  
+  
 // ,  ° . +
+  pageFilePath := template.Must(template.ParseFiles("layout_main_page.html"))
+  pageFilePath.Execute(w, pageData)
+  
+}  //  .  appHandler
+
+
+
+
+// . pageHandler, ~ for User Pages °
+func pageHandler(w http.ResponseWriter, r *http.Request) {
+// ,  ° . +
+
+  pageTitle := "~ Learn.CSS-Layout.online - // - Website App"
+  pagePath := r.URL.Path
+  pageType := ".."
+
+
+// ,  ° . +
+pageData := htmlPageData {
+      pageTitle: pageTitle,
+      pagePath: pagePath,
+      
+      pageList: []pageNav {
+          { pageTitle: "one", pageLink: "one"},
+          { pageTitle: "two", pageLink: "two"},
+          { pageTitle: "three", pageLink: "three"},
+      },
+  	
+  }  //. .  pageData
+  
+  
+  // ,  ° . +
+  if pagePath == "/user" {
+      pageTitle = "User Page"
+      pageList = pageList
+  }
+  
+  // ,  ° . +
   if pagePath == "/user" {
       pageTitle = "User Page"
       pageList = pageList
@@ -88,44 +129,6 @@ func appHandler(w http.ResponseWriter, r *http.Request) {
       pageTitle = "Settings Page"
       pageList = pageList
   }
-  
-  
-// ,  ° . +
-  pageFilePath := template.Must(template.ParseFiles("layout_main_page.html"))
-  pageFilePath.Execute(w, pageData)
-  
-}  //  .  appHandler
-
-
-
-
-// . pageHandler
-func pageHandler(w http.ResponseWriter, r *http.Request) {
-// ,  ° . +
-
-  pageTitle := "~ Learn.CSS-Layout.online - // - Website App"
-  pagePath := r.URL.Path
-  pageType := ".."
-
-
-// ,  ° . +
-pageData := htmlPageData {
-      pageTitle: pageTitle,
-      pagePath: pagePath,
-      
-      pageList: []pageNav {
-          { pageTitle: "one", pageLink: "one"},
-          { pageTitle: "two", pageLink: "two"},
-          { pageTitle: "three", pageLink: "three"},
-      },
-  	
-  }  //. .  pageData
-  
-  
-  if pagePath == "/user" {
-      pageTitle = "User Page"
-      pageList = pageList
-  }
 
 
 // ,  ° . +
@@ -136,7 +139,7 @@ pageFilePath := template.Must(template.ParseFiles("layout_main_page.html"))
 
 
 
-// . indexHandler
+// . indexHandler,  ~ for Public Pags °
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 // ,  ° . +
     if r.URL.Path != "/" {
@@ -188,14 +191,14 @@ func main() {
 // ,  ° . +
   http.HandleFunc("/", indexHandler)
   
-  http.HandleFunc("/user", indexHandler)
-  http.HandleFunc("/account", indexHandler)
-  http.HandleFunc("/profile", indexHandler)
+  http.HandleFunc("/user", pageHandler)
+  http.HandleFunc("/account", pageHandler)
+  http.HandleFunc("/profile", pageHandler)
   
-  http.HandleFunc("/portfolio", indexHandler)
-  http.HandleFunc("/resume", indexHandler)
+  http.HandleFunc("/portfolio", pageHandler)
+  http.HandleFunc("/resume", pageHandler)
   
-  http.HandleFunc("/settings", indexHandler)
+  http.HandleFunc("/settings", appHandler)
   
 
 
