@@ -14,7 +14,15 @@ _ ` ... ` ~
 _ ` Regular, Program Schedule ~
 - Mon °
 - Wed °
-- Fri°
+- Fri °
+
+--- 
+_ `...` ~
+
++ available on ~ www.DevCode.help °
++ available on ~ www.SOS-Bot.com °
+
+
 
 
 --- 
