@@ -6,6 +6,8 @@ http://www.css-layout.online/
 
 https://github.com/Ejected-Media/Learn-CSS-Layout-online
 
+https://learn-css-layout-online.appspot.com/
+
 
 ---  
 
@@ -22,10 +24,7 @@ _ `...` ~
 + available on ~ www.DevCode.help °
 + available on ~ www.SOS-Bot.com °
 
-~.  
 
-+ Git Source Repo ~ https://github.com/Ejected-Media/DevCode-help
-+ Git Source Repo ~ https://github.com/Ejected-Media/app_SOS-Bot-com 
 
 
 --- 
