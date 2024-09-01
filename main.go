@@ -59,17 +59,17 @@ func appHandler(w http.ResponseWriter, r *http.Request) {
       pageTitle: pageTitle,
       pagePath: pagePath,
       
-      pageList: []pageNav {
-          { pageTitle: "one", pageLink: "one"},
-          { pageTitle: "two", pageLink: "two"},
-          { pageTitle: "three", pageLink: "three"},
-      },
+    //  pageList: []pageNav {
+    //      { pageTitle: "one", pageLink: "one"},
+  //        { pageTitle: "two", pageLink: "two"},
+   //       { pageTitle: "three", pageLink: "three"},
+  //    },
   	
   }  //. .  pageData
   
   if pagePath == "/settings" {
       pageTitle = "Settings Page"
-      pageList = pageList
+//      pageList = pageList
   }
   
   
@@ -96,11 +96,11 @@ pageData := htmlPageData {
       pageTitle: pageTitle,
       pagePath: pagePath,
       
-      pageList: []pageNav {
-          { pageTitle: "one", pageLink: "one"},
-          { pageTitle: "two", pageLink: "two"},
-          { pageTitle: "three", pageLink: "three"},
-      },
+ //     pageList: []pageNav {
+  //        { pageTitle: "one", pageLink: "one"},
+   //       { pageTitle: "two", pageLink: "two"},
+    //      { pageTitle: "three", pageLink: "three"},
+ //     },
   	
   }  //. .  pageData
   
@@ -108,35 +108,35 @@ pageData := htmlPageData {
   // ,  ° . +
   if pagePath == "/user" {
       pageTitle = "User Page"
-      pageList = pageList
+ //     pageList = pageList
   }
   
   // ,  ° . +
   if pagePath == "/user" {
       pageTitle = "User Page"
-      pageList = pageList
+ //     pageList = pageList
   }
   
   if pagePath == "/account" {
       pageTitle = "Account Page"
-      pageList = pageList
+ //     pageList = pageList
   }
   
   if pagePath == "/profile" {
       pageTitle = "Profile Page"
-      pageList = pageList
+//      pageList = pageList
   }
   
   
 // ,  ° . +
   if pagePath == "/portfolio" {
       pageTitle = "Portfolio Page"
-      pageList = pageList
+    //  pageList = pageList
   }
   
   if pagePath == "/resume" {
       pageTitle = "Resume Page"
-      pageList = pageList
+//      pageList = pageList
   }
 
 
@@ -167,38 +167,38 @@ pageData := htmlPageData {
       pageTitle: pageTitle,
       pagePath: pagePath,
       
-      pageList: []pageNav {
-          { pageTitle: "one", pageLink: "one"},
-          { pageTitle: "two", pageLink: "two"},
-          { pageTitle: "three", pageLink: "three"},
-      },
+    //  pageList: []pageNav {
+  //        { pageTitle: "one", pageLink: "one"},
+//          { pageTitle: "two", pageLink: "two"},
+   //       { pageTitle: "three", pageLink: "three"},
+    //  },
   	
   }  //. .  pageData
   
   
   if pagePath == "/" {
       pageTitle = "Index Page"
-      pageList = pageList
+ //     pageList = pageList
   }
   
     if pagePath == "/front" {
       pageTitle = "Front Page"
-      pageList = pageList
+//      pageList = pageList
   }
   
     if pagePath == "/main" {
       pageTitle = "Main Page"
-      pageList = pageList
+ //     pageList = pageList
   }
   
     if pagePath == "/home" {
       pageTitle = "Home Page"
-      pageList = pageList
+ //     pageList = pageList
   }
   
     if pagePath == "/start" {
       pageTitle = "Start Page"
-      pageList = pageList
+//      pageList = pageList
   }
 
 // ,  ° . +
