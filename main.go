@@ -1,4 +1,4 @@
- # ~ Learn-CSS-Layout-online ~
+ // # ~ Learn-CSS-Layout-online ~
 // ,  ° . +
 package main
 
@@ -137,7 +137,7 @@ pageFilePath := template.Must(template.ParseFiles("layout_main_page.html"))
 
 
 
-// . indexHandler,  ~ for Public Pags °
+// . indexHandler,  ~ for Public Pages °
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 // ,  ° . +
     if r.URL.Path != "/" {
