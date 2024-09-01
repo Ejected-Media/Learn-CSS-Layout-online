@@ -3,7 +3,13 @@
 package main
 
 import (
-
+    "os"
+    "log"
+		
+	"text/template"
+	"net/http"
+	
+	"time"
 
 )
 
@@ -16,6 +22,11 @@ type htmlPageData struct {
 }
 
 type pageNav struct {
+    pageTitle string
+    pageLink string
+}
+
+type pageList struct {
     pageTitle string
     pageLink string
 }
@@ -41,7 +52,7 @@ func appHandler(w http.ResponseWriter, r *http.Request) {
   pageTitle := "~ Learn.CSS-Layout.online - // - Website App"
   pagePath := r.URL.Path
   
-  pageType := ".."
+  // pageType := ".."
   
 // ,  ° . +
   pageData := htmlPageData {
@@ -77,7 +88,7 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 
   pageTitle := "~ Learn.CSS-Layout.online - // - Website App"
   pagePath := r.URL.Path
-  pageType := ".."
+//  pageType := ".."
 
 
 // ,  ° . +
@@ -148,7 +159,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 // , ° . +
   pageTitle := "~ Learn.CSS-Layout.online - // - Website App"
   pagePath := r.URL.Path
-  pageType := ".."
+  // pageType := ".."
 
 
 // ,  ° . +
